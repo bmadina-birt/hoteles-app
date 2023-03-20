@@ -1,0 +1,24 @@
+<label for="province">Provincia:</label>
+<select id="province" [(ngModel)]="selectedProvince" class="form-select">
+  <option *ngFor="let province of provinces" [value]="province">{{province}}</option>
+</select>
+
+<button (click)="filterHotels()" class="btn btn-primary">Filtrar</button>
+<button (click)="resetFilter()" class="btn btn-secondary">Resetear</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Categoría</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hotel of hotels">
+      <td>{{hotel.name}}</td>
+      <td>{{hotel.address}}</td>
+      <td>{{hotel.category}}</td>
+    </tr>
+  </tbody>
+</table>
