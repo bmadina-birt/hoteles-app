@@ -8,6 +8,7 @@ import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { HotelMapComponent } from './hotel-map/hotel-map.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import {NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes =[
   {path: '',redirectTo: '/map', pathMatch: 'full'},
@@ -28,7 +29,9 @@ const routes: Routes =[
     BrowserModule,
     HttpClientModule,
     FormsModule, // <-- Importa el módulo FormsModule  (para poder usar ngModel)
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgbModule,
+    NgbPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
