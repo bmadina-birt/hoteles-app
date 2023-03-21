@@ -1,17 +1,27 @@
-<div id="map" style="height: 400px;"></div>
+<!-- Header -->
+<header class="bg-light py-3 mb-4">
+  <div class="container">
+    <h1 class="display-5">Mapa de hoteles</h1>
+  </div>
+</header>
 
-<form (submit)="searchHotels()">
-  <label for="type">Tipo:</label>
-  <input type="text" id="type" [(ngModel)]="type" name="type">
-  <br>
-  <label for="lon">Longitud:</label>
-  <input type="number" id="lon" [(ngModel)]="lon" name="lon">
-  <br>
-  <label for="lat">Latitud:</label>
-  <input type="number" id="lat" [(ngModel)]="lat" name="lat">
-  <br>
-  <label for="dist">Distancia:</label>
-  <input type="number" id="dist" [(ngModel)]="dist" name="dist">
-  <br>
-  <button type="submit">Buscar</button>
-</form>
+<!-- Main content -->
+<div class="container">
+  <div class="row">
+    <!-- Map area -->
+    <div class="col-md-8 mb-4">
+      <div id="map" style="height: 400px;"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="col-md-4">
+      <h2>Estrellas</h2>
+      <div class="form-check" *ngFor="let category of categories">
+        <input class="form-check-input" type="checkbox" id="{{category}}" (change)="onCategoryChange(category, $event)" [checked]="true">
+        <label class="form-check-label" for="{{category}}">
+          {{category}}
+        </label>
+      </div>
+    </aside>
+  </div>
+</div>

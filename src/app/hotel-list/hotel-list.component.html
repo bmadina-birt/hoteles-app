@@ -9,16 +9,20 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Dirección</th>
+      <th>Municipio</th>
+      <th>Nombre del hotel</th>
       <th>Categoría</th>
+      <th>Web</th>
+
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let hotel of hotels">
+    <tr *ngFor="let hotel of currentHotels">
+      <td>{{hotel.municipality}}</td>
       <td>{{hotel.name}}</td>
-      <td>{{hotel.address}}</td>
       <td>{{hotel.category}}</td>
+      <td>{{hotel.web}}</td>
     </tr>
   </tbody>
 </table>
+<ngb-pagination [collectionSize]="totalItems" [(page)]="currentPage" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>

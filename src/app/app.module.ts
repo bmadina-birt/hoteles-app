@@ -23,7 +23,7 @@ const routes: Routes =[
     HotelListComponent,
     HotelMapComponent,
     FooterComponent,
-    HeaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
