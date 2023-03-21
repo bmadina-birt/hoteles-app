@@ -25,7 +25,7 @@ export class HotelMapComponent {
 
 
     // Inicializa el mapa
-    this.map = L.map('map').setView([42.88, -2.58], 8);
+    this.map = L.map('map').setView([42.88, -2.57], 8);
 
     // Agrega capa base al mapa
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
